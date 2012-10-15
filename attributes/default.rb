@@ -32,6 +32,12 @@ default['yum']['epel_release'] = case node['platform_version'].to_i
                                   end
 default['yum']['ius_release'] = '1.0-10'
 default['yum']['repoforge_release'] = '0.5.2-2'
+default['yum']['rbel_release'] = case node['platform_version'].to_i
+                                  when 6
+                                    "6"
+                                  when 5
+                                    "5"
+                                  end
 default['yum']['proxy'] = ''
 default['yum']['proxy_username'] = ''
 default['yum']['proxy_password'] = ''
